@@ -14,7 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('photographies', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('title');
+            $table->string('name');
+            $table->string('type');
+            $table->string('extension');
+            $table->text('location');
+            $table->integer('width');
+            $table->integer('height');                     
+            $table->integer('size')->nullable();
+            $table->text('path')->nullable();  
+            $table->text('description')->nullable();            
             $table->timestamps();
         });
     }
