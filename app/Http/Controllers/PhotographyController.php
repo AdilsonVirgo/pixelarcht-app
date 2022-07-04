@@ -15,7 +15,7 @@ class PhotographyController extends Controller
      */
     public function index()
     {
-        //
+        dd('index');
     }
 
     /**
@@ -25,7 +25,7 @@ class PhotographyController extends Controller
      */
     public function create()
     {
-        //
+        return view('picview.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class PhotographyController extends Controller
      */
     public function store(StorePhotographyRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -47,7 +47,7 @@ class PhotographyController extends Controller
      */
     public function show(Photography $photography)
     {
-        //
+        dd('photoID');
     }
 
     /**
