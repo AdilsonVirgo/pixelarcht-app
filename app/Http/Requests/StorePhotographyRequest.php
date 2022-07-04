@@ -24,7 +24,11 @@ class StorePhotographyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+
+            'photo' => 'required|image',
+
+            'category_id' => 'required'
         ];
     }
 }

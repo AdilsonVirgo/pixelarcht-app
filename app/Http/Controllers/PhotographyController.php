@@ -37,45 +37,48 @@ class PhotographyController extends Controller
     public function store(StorePhotographyRequest $request)
     {   
         
+        /*$attributes = $request()->validate([
+            'title' => 'required',
+            'photo' => 'required|image',
+            'category_id' => 'required'
+        ]);*/
+
         if ($request->hasFile('photo')) {
             
             if ($request->file('photo')->isValid()) {                
                 $imagen = $request->file('photo'); 
                 $title  = $request->title;
+                $category_id  = $request->category_id;
                 $filename  = $imagen->getClientOriginalName();
-                $basename  = $imagen->getClientOriginalName();
-                $originalName  = $imagen->getClientOriginalName();               
-                $type  = $request->file('photo')->getMimeType();
+                $originalName  = $imagen->getClientOriginalName();  
                 $mimeType  = $imagen->getMimeType();
                 $extension  = $imagen->extension(); //getClientOriginalExtension();              
-                $size  = $imagen->getSize();                
-                $path  = $imagen->path();
-                $pathname  = $imagen->getPathName();//^ "C:\wamp64\tmp\phpF08F.tmp"     
-                $realPath  = $imagen->getRealPath();//^ "C:\wamp64\tmp\php91F3.tmp"
-                $linkTarget  = $imagen->getLinkTarget();//^ "C:\wamp64\tmp\php8ADD.tmp"
-                $description  = $request->title;  
-                $storepath = $imagen->store('pics');                           
+                $size  = $imagen->getSize();                  
+                $fullPath  = $imagen->getRealPath();//^ "C:\wamp64\tmp\php91F3.tmp"
+                $description  = $request->description;  
+                $storepath = $imagen->store('pics');       
+                                
+                
+                //
+                $photoX = new Photography();
+                $photoX->title = $title;
+                $photoX->category_id = $category_id;
+                $photoX->filename = $storepath;//remover la extension y la carpeta//pics/JlAwZK3NuIMpxJWRPhLApZKxP0UN4aeVDAvpTMA3.jpg    
+                $photoX->originalName = $originalName;
+                $photoX->mimeType = $mimeType;
+                $photoX->extension = $extension;
+                $photoX->size = $size;
+                $photoX->storepath = $storepath;
+                $photoX->fullpath = $fullPath;
+                $photoX->description = $description;
+                $photoX->save();
+
                 return 'Done '.$storepath;
+
             }
         }
+
     }
-    /* $table->increments('id');
-            $table->integer('category_id')->default(0);
-            $table->string('title');
-            $table->string('filename');
-            $table->string('basename');
-            $table->string('originalName');            
-            $table->string('type');
-            $table->string('mimeType');
-            $table->string('extension');
-            $table->integer('width')->nullable();
-            $table->integer('height')->nullable();                     
-            $table->integer('size')->nullable();
-            $table->text('path')->nullable(); 
-            $table->text('pathname')->nullable(); 
-            $table->text('realPath')->nullable();    
-            $table->text('linkTarget')->nullable();           
-            $table->text('description')->nullable();  */
 
     /**
      * Display the specified resource.
