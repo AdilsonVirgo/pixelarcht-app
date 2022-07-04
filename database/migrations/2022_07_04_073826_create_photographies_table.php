@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('photographies', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id')->default(0);
             $table->string('title');
             $table->string('name');
             $table->string('type');
