@@ -15,7 +15,7 @@ class PhotographyController extends Controller
      */
     public function index()
     {
-        dd('index');
+        return view('picview.index');
     }
 
     /**
@@ -53,10 +53,12 @@ class PhotographyController extends Controller
                 $originalName  = $imagen->getClientOriginalName();  
                 $mimeType  = $imagen->getMimeType();
                 $extension  = $imagen->extension(); //getClientOriginalExtension();              
-                $size  = $imagen->getSize();                  
-                $fullPath  = $imagen->getRealPath();//^ "C:\wamp64\tmp\php91F3.tmp"
+                $size  = $imagen->getSize();    
+                
                 $description  = $request->description;  
                 $storepath = $imagen->store('pics');       
+                $url = asset('storage/'.$storepath);               
+                $fullPath  = $url;
                                 
                 
                 //
@@ -73,7 +75,7 @@ class PhotographyController extends Controller
                 $photoX->description = $description;
                 $photoX->save();
 
-                return 'Done '.$storepath;
+                return redirect('/photos');
 
             }
         }
