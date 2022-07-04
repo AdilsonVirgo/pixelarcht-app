@@ -8,4 +8,12 @@
             </div>
         </div>
     </div>
+    
+    <div>
+        <form  method="POST" action="/upload" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="photo">
+            <input type="submit" name="Upload">
+        </form>
+    </div>
 </x-guest-layout>

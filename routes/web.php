@@ -20,10 +20,9 @@ Route::get('/', function () {
 /**/
  
 Route::controller(PhotographyController::class)->group(function () {
-    Route::get('/photos', 'index');
-    Route::get('/photos/{id}', 'show');
+    Route::get('/photos', 'index');    
     Route::get('/upload', 'create');
-    Route::post('/photos', 'store');
+    Route::post('/upload', 'store');
 }); 
 
 
