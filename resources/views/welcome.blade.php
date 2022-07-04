@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/e237ca401f.js" crossorigin="anonymous"></script>
 
         <!-- Styles -->
         <style>
@@ -46,6 +47,8 @@
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <i class="fa-solid fa-thumbs-up fa-5x"></i>
+
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
