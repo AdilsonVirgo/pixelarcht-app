@@ -19,7 +19,7 @@ class PhotographyController extends Controller
     {
         
         $all = Photography::all();
-        dd($all);
+        dd($all->count());
         $countImages = $all->count();
         if($countImages>0){
         return view('picview.index',['all' => $all]);
