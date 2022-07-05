@@ -17,14 +17,14 @@ class PhotographyController extends Controller
      */
     public function index()
     {
-        dd('upload');
+        dd('upload if');
         $all = Photography::all();
         $countImages = $all->count();
         if($countImages>0){
         return view('picview.index',['all' => $all]);
 
         }else{
-        dd('upload');
+        dd('upload else');
             //return redirect('/upload');
         }
 
