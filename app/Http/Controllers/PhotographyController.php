@@ -15,7 +15,25 @@ class PhotographyController extends Controller
      */
     public function index()
     {
-        return view('picview.index');
+        $all = Photography::all();
+        $countImages = $all->count();
+        if($countImages>0){
+            //dd($all);
+            /*if(!File::exists($path)));
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response; */
+        //$path = storage_path() . '/pics/' . $filename;
+        return view('picview.index',['all' => $all]);
+
+        }else{
+
+            return redirect('/upload');
+        }
+
+        
     }
 
     /**
@@ -53,8 +71,7 @@ class PhotographyController extends Controller
                 $originalName  = $imagen->getClientOriginalName();  
                 $mimeType  = $imagen->getMimeType();
                 $extension  = $imagen->extension(); //getClientOriginalExtension();              
-                $size  = $imagen->getSize();    
-                
+                $size  = $imagen->getSize();                    
                 $description  = $request->description;  
                 $storepath = $imagen->store('pics');       
                 $url = asset('storage/'.$storepath);               
