@@ -17,8 +17,9 @@ class PhotographyController extends Controller
      */
     public function index()
     {
-        dd('upload if');
+        
         $all = Photography::all();
+        dd($all);
         $countImages = $all->count();
         if($countImages>0){
         return view('picview.index',['all' => $all]);
