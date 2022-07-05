@@ -20,23 +20,11 @@ class PhotographyController extends Controller
         $all = Photography::all();
         $countImages = $all->count();
         if($countImages>0){
-            /*$first = Photography::first();            
-            $img1 = Image::make('storage/'.$first->storePath)->resize(120, 120);
-            dd($img1);*/
-            
-            //dd($all);
-            /*if(!File::exists($path)));
-    $file = File::get($path);
-    $type = File::mimeType($path);
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-    return $response; */
-        //$path = storage_path() . '/pics/' . $filename;
         return view('picview.index',['all' => $all]);
 
         }else{
-
-            return redirect('/upload');
+        dd('upload');
+            //return redirect('/upload');
         }
 
         
