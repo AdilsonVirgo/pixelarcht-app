@@ -23,7 +23,7 @@ class PhotographyController extends Controller
         if($countImages>0){
         return view('picview.index',['all' => $all]);
         }else{
-            //return redirect('/upload');
+            return redirect('/upload');
         }
 
         
