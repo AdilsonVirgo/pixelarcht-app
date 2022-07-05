@@ -19,10 +19,7 @@
                     <label for="title" class="mb-2 uppercase font-bold text-xs text-gray-700">Title:</label>
                     <input type="text" class="mb-2 border border-gray-400 p-2 w-full" name="title" value="{{old('title')}}" required>
     
-                    <div class="mb-2">    
-                    <label for="photo" class="mb-2 uppercase font-bold text-xs text-gray-700">Photo:</label>
-                    <input type="file" class="mb-2 border border-gray-400 p-2 w-full" name="photo" required>
-                    </div>   
+                     
     
                     <div class="mb-2">    
                         <label for="photo" class="mb-2 uppercase font-bold text-xs text-gray-700">Choose a category:</label>
