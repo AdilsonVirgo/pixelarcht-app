@@ -17,6 +17,7 @@ class PhotographyController extends Controller
      */
     public function index()
     {
+        dd('upload');
         $all = Photography::all();
         $countImages = $all->count();
         if($countImages>0){
@@ -48,13 +49,6 @@ class PhotographyController extends Controller
      */
     public function store(StorePhotographyRequest $request)
     {   
-        
-        /*$attributes = $request()->validate([
-            'title' => 'required',
-            'photo' => 'required|image',
-            'category_id' => 'required'
-        ]);*/
-
         if ($request->hasFile('photo')) {
             
             if ($request->file('photo')->isValid()) {                
@@ -69,8 +63,7 @@ class PhotographyController extends Controller
                 $description  = $request->description;  
                 $storepath = $imagen->store('pics');       
                 $url = asset('storage/'.$storepath);               
-                $fullPath  = $url;
-                                
+                $fullPath  = $url;                                
                 
                 //
                 $photoX = new Photography();
