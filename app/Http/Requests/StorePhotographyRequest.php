@@ -31,4 +31,5 @@ class StorePhotographyRequest extends FormRequest
             'category_id' => 'required'
         ];
     }
+    // 'filename' => 'image|required|mimes:jpeg,png,jpg,gif,svg'
 }
