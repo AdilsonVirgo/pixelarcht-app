@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Photography;
 use App\Http\Requests\StorePhotographyRequest;
 use App\Http\Requests\UpdatePhotographyRequest;
+use App\ImageModel;
+use Image;
 
 class PhotographyController extends Controller
 {
@@ -18,6 +20,10 @@ class PhotographyController extends Controller
         $all = Photography::all();
         $countImages = $all->count();
         if($countImages>0){
+            /*$first = Photography::first();            
+            $img1 = Image::make('storage/'.$first->storePath)->resize(120, 120);
+            dd($img1);*/
+            
             //dd($all);
             /*if(!File::exists($path)));
     $file = File::get($path);

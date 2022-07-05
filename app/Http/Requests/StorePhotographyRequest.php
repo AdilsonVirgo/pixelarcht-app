@@ -32,4 +32,6 @@ class StorePhotographyRequest extends FormRequest
         ];
     }
     // 'filename' => 'image|required|mimes:jpeg,png,jpg,gif,svg'
+    //'file' => 'max:5120'
+    //'your_file_input' => 'required|file|size:5000',
 }

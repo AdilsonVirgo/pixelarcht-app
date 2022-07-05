@@ -22,13 +22,8 @@
           
             <div class="row">
                 @foreach ($all as $photo)
-                    <p>This is photo {{ $photo->id }}</p>
                     <div class="card">
-                        <img src="{{'storage/'.$photo->storePath}}" alt="{{$photo->originalName}}" style="width:100%">
-                        <div class="container">
-                          <h4><b>{{$photo->title}}</b></h4>
-                          <p>{{$photo->originalName}}</p>
-                        </div>
+                        <img src="{{'storage/'.$photo->storePath}}" alt="{{$photo->originalName}}" id="card{{$photo->id}}" style="width:33%px;height: 300px;"/>
                       </div>
                 @endforeach
             </div>
