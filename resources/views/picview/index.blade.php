@@ -5,24 +5,19 @@
             <p>Resize this responsive page to see the effect!</p> 
           </div>
           
-          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
+          
+          <div class="d-flex flex-row-reverse bd-highlight fixed-top">
+            <div class="p-2 bd-highlight">
+                <select id="selectPhotoMenu" class="form-select" aria-label="Default select example">
+                    <option selected>Photography</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>    
+                    <option value="3">3</option>
+                </select>
             </div>
-          </nav>
+            <div id="selectAboutMenu" class="p-2 bd-highlight">About</div>
+            <div id="selectSayHelloMenu" class="p-2 bd-highlight">Say hello</div>
+          </div>
           
           <div class="container mt-5">
             <div class="row">

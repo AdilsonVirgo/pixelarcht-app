@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+
+  #selectPhotoMenu{
+    border-width: 0;
+    background-color: transparent;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+  #selectSayHelloMenu{
+    margin-top: 8px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+  #selectAboutMenu{
+    margin-top: 8px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+  option {
+   background-color: grey;
+  }
