@@ -38,6 +38,7 @@ class PhotographyController extends Controller
      */
     public function create()
     {
+        dd('create');
         return view('picview.create');
     }
 
