@@ -1,9 +1,9 @@
 <x-basic>
     <x-slot name="content">
-        <div class="p-5 bg-primary text-white text-center">
-            <h1>My First Bootstrap 5 Page</h1>
-            <p>Resize this responsive page to see the effect!</p> 
-          </div>
+        
+          <div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+            <a href="/upload" class="topnav-icons fa fa-home" style="color:white;float:left;padding-top:20px;font-size:20px;" title="Home"> Johnathan Juno</a>
+            </div>
           
           
           <div class="d-flex flex-row-reverse bd-highlight fixed-top">
@@ -29,7 +29,7 @@
             </div>
           
           
-          <div class="mt-5 p-4 bg-dark text-white text-center">
+          <div class="mt-5 p-4 bg-slate-300 text-white text-center">
             <p>Footer</p>
           </div>
     </x-slot>
