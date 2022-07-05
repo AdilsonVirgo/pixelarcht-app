@@ -23,7 +23,7 @@
             <div class="row">
                 @foreach ($all as $photo)
                     <div class="card">
-                        <img src="{{'storage/'.$photo->storePath}}" alt="{{$photo->originalName}}" id="card{{$photo->id}}" style="width:33%px;height: 300px;"/>
+                        <img src="{{'storage/'.$photo->storePath}}" alt="{{$photo->originalName}}" id="card{{$photo->id}}" style="width:33%px;height: 333px;"/>
                       </div>
                 @endforeach
             </div>

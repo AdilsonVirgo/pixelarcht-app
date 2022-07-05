@@ -10,6 +10,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
+                   
+                    <br/>
+                    <br/>
+                    
+                    <a class="bg-indigo-500 hover:bg-cyan-600 p-2" href="/upload">Url to upload pictures</a>
+                    <br/>
+                    <br/>
+                    <a class="bg-sky-500 hover:bg-cyan-600 p-2" href="/photos">Url to see photos</a>
                 </div>
             </div>
         </div>
