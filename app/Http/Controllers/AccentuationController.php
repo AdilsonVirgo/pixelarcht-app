@@ -37,11 +37,11 @@ class AccentuationController extends Controller
      */
     public function store(StoreaccentuationRequest $request)
     {
-        dd($request);
-        $imagen = $request->file('photo'); 
-        $photoX = new Photography();
-        $photoX->save();
-        return redirect('/photos');
+        $nameX = $request->name; 
+        $acc = new accentuation();
+        $acc->name = $nameX;
+        $acc->save();
+        return redirect('/accentuations');
     }
 
     /**
