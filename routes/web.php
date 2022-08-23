@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotographyController;
+use App\Http\Controllers\AccentuationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::controller(PhotographyController::class)->group(function () {
     Route::get('/photos', 'index');    
     Route::get('/upload', 'create');
     Route::post('/upload', 'store');
+}); 
+
+Route::controller(AccentuationController::class)->group(function () {
+    Route::get('/accentuations', 'index');   
 }); 
 
 
