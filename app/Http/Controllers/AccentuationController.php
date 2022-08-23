@@ -26,7 +26,7 @@ class AccentuationController extends Controller
      */
     public function create()
     {
-        //
+        return view('accview.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class AccentuationController extends Controller
      */
     public function store(StoreaccentuationRequest $request)
     {
-        //
+        dd($request);
+        $imagen = $request->file('photo'); 
+        $photoX = new Photography();
+        $photoX->save();
+        return redirect('/photos');
     }
 
     /**

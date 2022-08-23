@@ -28,6 +28,8 @@ Route::controller(PhotographyController::class)->group(function () {
 
 Route::controller(AccentuationController::class)->group(function () {
     Route::get('/accentuations', 'index');   
+    Route::get('/accentuations/create', 'create');
+    Route::post('/accentuations', 'store');
 }); 
 
 
