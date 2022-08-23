@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotographyController;
 use App\Http\Controllers\AccentuationController;
+use App\Http\Controllers\WordController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,12 @@ Route::controller(AccentuationController::class)->group(function () {
     Route::get('/accentuations', 'index');   
     Route::get('/accentuations/create', 'create');
     Route::post('/accentuations', 'store');
+}); 
+
+Route::controller(WordController::class)->group(function () {
+    Route::get('/words', 'index');   
+    Route::get('/words/create', 'create');
+    Route::post('/words', 'store');
 }); 
 
 

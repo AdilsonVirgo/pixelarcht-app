@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Word;
-use App\Http\Requests\StoreWordRequest;
-use App\Http\Requests\UpdateWordRequest;
+use App\Models\Silaba;
+use App\Http\Requests\StoreSilabaRequest;
+use App\Http\Requests\UpdateSilabaRequest;
 
-class WordController extends Controller
+class SilabaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class WordController extends Controller
      */
     public function index()
     {
-        $all = Word::all();
-        return view('accview.index',['all' => $all]);
+        //
     }
 
     /**
@@ -26,31 +25,27 @@ class WordController extends Controller
      */
     public function create()
     {
-        return view('wordview.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWordRequest  $request
+     * @param  \App\Http\Requests\StoreSilabaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWordRequest $request)
+    public function store(StoreSilabaRequest $request)
     {
-        $nameX = $request->name; 
-        $acc = new accentuation();
-        $acc->name = $nameX;
-        $acc->save();
-        return redirect('/accentuations');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Word  $word
+     * @param  \App\Models\Silaba  $silaba
      * @return \Illuminate\Http\Response
      */
-    public function show(Word $word)
+    public function show(Silaba $silaba)
     {
         //
     }
@@ -58,10 +53,10 @@ class WordController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Word  $word
+     * @param  \App\Models\Silaba  $silaba
      * @return \Illuminate\Http\Response
      */
-    public function edit(Word $word)
+    public function edit(Silaba $silaba)
     {
         //
     }
@@ -69,11 +64,11 @@ class WordController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWordRequest  $request
-     * @param  \App\Models\Word  $word
+     * @param  \App\Http\Requests\UpdateSilabaRequest  $request
+     * @param  \App\Models\Silaba  $silaba
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWordRequest $request, Word $word)
+    public function update(UpdateSilabaRequest $request, Silaba $silaba)
     {
         //
     }
@@ -81,10 +76,10 @@ class WordController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Word  $word
+     * @param  \App\Models\Silaba  $silaba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Word $word)
+    public function destroy(Silaba $silaba)
     {
         //
     }
