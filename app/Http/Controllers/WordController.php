@@ -16,7 +16,7 @@ class WordController extends Controller
     public function index()
     {
         $all = Word::all();
-        return view('accview.index',['all' => $all]);
+        return view('wordview.index',['all' => $all]);
     }
 
     /**
