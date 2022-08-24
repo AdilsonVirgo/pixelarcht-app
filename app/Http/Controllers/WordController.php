@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Word;
 use App\Http\Requests\StoreWordRequest;
 use App\Http\Requests\UpdateWordRequest;
+use App\Http\Requests\SearchWordRequest;
 
 class WordController extends Controller
 {
@@ -113,6 +114,17 @@ class WordController extends Controller
         $string = preg_replace('/[^A-Za-zñÑáéíóúÁÉÍÓÚÝ\-]/', '', $string); // Removes special chars.     
         return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
      }
+
+     public function search()
+     {
+         return view('wordview.search');
+     }
+
+     public function postsearch()
+     {
+         dd()
+     }
+ 
 
 
 }
