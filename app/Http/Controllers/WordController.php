@@ -37,13 +37,26 @@ class WordController extends Controller
      */
     public function store(StoreWordRequest $request)
     {
-        $nameX = $request->name; 
-        $nlettersX = 4; 
-        $wordX = new Word();
-        $wordX->name = $nameX;
-        $wordX->nlettersX = $nlettersX;
-        $wordX->save();
-        return redirect('/words');
+        try {
+            $cleanX = $this->clean($request->name);
+            $arrayWords = explode("-",$cleanX);
+            foreach($arrayWords as $ind => $val) {
+                echo "$ind = $val<br>";
+                $user = Word::firstOrNew(['name' =>  $val]);            
+                $user->name = $val;
+                $nlettersX = strlen($val);  
+                if($nlettersX>1){
+                    $user->nletters = $nlettersX;          
+                    $user->save();
+                    $c++;
+                }                 
+              }             
+              return redirect('/words');
+          }
+          //catch exception
+          catch(Exception $e) {
+            echo 'Message: ' .$e->getMessage();           
+          }
     }
 
     /**
@@ -90,4 +103,18 @@ class WordController extends Controller
     {
         //
     }
+
+    public function clean($string) {
+    /*  $string = str_replace('á', 'a', $string); // Replaces all spaces with hyphens.   
+        $string = str_replace('é', 'e', $string); // Replaces all spaces with hyphens.   
+        $string = str_replace('í', 'i', $string); // Replaces all spaces with hyphens.   
+        $string = str_replace('ó', 'o', $string); // Replaces all spaces with hyphens.   */ 
+        $string = str_replace('ü', 'u', $string); // Replaces all ü with u.   
+
+        $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+        $string = preg_replace('/[^A-Za-zñÑáéíóúÁÉÍÓÚÝ\-]/', '', $string); // Removes special chars.     
+        return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+     }
+
+
 }
