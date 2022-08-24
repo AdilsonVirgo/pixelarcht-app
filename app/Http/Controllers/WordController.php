@@ -38,10 +38,12 @@ class WordController extends Controller
     public function store(StoreWordRequest $request)
     {
         $nameX = $request->name; 
-        $acc = new accentuation();
-        $acc->name = $nameX;
-        $acc->save();
-        return redirect('/accentuations');
+        $nlettersX = 4; 
+        $wordX = new Word();
+        $wordX->name = $nameX;
+        $wordX->nlettersX = $nlettersX;
+        $wordX->save();
+        return redirect('/words');
     }
 
     /**
