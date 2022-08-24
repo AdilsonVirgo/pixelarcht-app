@@ -43,17 +43,15 @@ class WordController extends Controller
             foreach($arrayWords as $ind => $val) {
                 echo "$ind = $val<br>";
                 $user = Word::firstOrNew(['name' =>  $val]);            
-                $user->name = $val;
+                $user->name = strtolower($val);
                 $nlettersX = strlen($val);  
-                if($nlettersX>1){
+                if($nlettersX>0){
                     $user->nletters = $nlettersX;          
-                    $user->save();
-                    $c++;
+                    $user->save();                    
                 }                 
               }             
               return redirect('/words');
           }
-          //catch exception
           catch(Exception $e) {
             echo 'Message: ' .$e->getMessage();           
           }
@@ -110,7 +108,7 @@ class WordController extends Controller
         $string = str_replace('í', 'i', $string); // Replaces all spaces with hyphens.   
         $string = str_replace('ó', 'o', $string); // Replaces all spaces with hyphens.   */ 
         $string = str_replace('ü', 'u', $string); // Replaces all ü with u.   
-
+        $string = str_replace('ç', 'c', $string); // Replaces all ç with c. //Better tahn this is identified the language
         $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
         $string = preg_replace('/[^A-Za-zñÑáéíóúÁÉÍÓÚÝ\-]/', '', $string); // Removes special chars.     
         return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
