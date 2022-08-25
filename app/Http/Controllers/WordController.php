@@ -124,7 +124,7 @@ class WordController extends Controller
      {
         try {
             $cleanX = $request->name;
-            $arrayWords = explode("-",$cleanX);
+            /*$arrayWords = explode("-",$cleanX);
             foreach($arrayWords as $ind => $val) {
                 echo "$ind = $val<br>";
                 $user = Word::firstOrNew(['name' =>  $val]);            
@@ -134,8 +134,9 @@ class WordController extends Controller
                     $user->nletters = $nlettersX;          
                     $user->save();                    
                 }                 
-              }             
-              return redirect('/words/search');
+              }  */           
+              $all = Word::first();
+              return view('wordview.index',['all' => $all]);
           }
           catch(Exception $e) {
             echo 'Message: ' .$e->getMessage();           
