@@ -120,9 +120,26 @@ class WordController extends Controller
          return view('wordview.search');
      }
 
-     public function postsearch()
+     public function postsearch(SearchWordRequest $request)
      {
-         dd()
+        try {
+            $cleanX = $request->name;
+            $arrayWords = explode("-",$cleanX);
+            foreach($arrayWords as $ind => $val) {
+                echo "$ind = $val<br>";
+                $user = Word::firstOrNew(['name' =>  $val]);            
+                $user->name = strtolower($val);
+                $nlettersX = strlen($val);  
+                if($nlettersX>0){
+                    $user->nletters = $nlettersX;          
+                    $user->save();                    
+                }                 
+              }             
+              return redirect('/words/search');
+          }
+          catch(Exception $e) {
+            echo 'Message: ' .$e->getMessage();           
+          }
      }
  
 

@@ -22,6 +22,26 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                width: 22%;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            /*flex-direction
+            flex-wrap
+            flex-flow
+            justify-content
+            align-items
+            align-content
+            */
         </style>
     </head>
     <body class="antialiased">
@@ -30,12 +50,59 @@
             <div class="mt-4 p-5 bg-secondary text-white rounded">
                 <h2>Form Search Word</h2>
                 <p>Enter data:</p>
-                <form method="POST" action="/words">
+                <form method="POST" action="/words/search">
                     @csrf
                   
-                        <div class="mb-3 mt-3">
+                        <div >
                           <label for="name" class="form-label">name:</label>
                           <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+                        </div>
+                        <div class="flex-container">
+                            <div>
+                                <select name="cars" id="cars">
+                                <option value="-1">Starting with</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
+                            <div>
+                                <select name="cars" id="cars">
+                                <option value="-1">Ending with</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
+                            <div>
+                                <select name="cars" id="cars">
+                                <option value="-1">Contains</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
+                            <div>
+                                <select name="cars" id="cars">
+                                <option value="-1">Same nletters</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
+                            <div>
+                                <select name="cars" id="cars">
+                                <option value="-1">Rhymes nletters</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
                         </div>
                        
                         <button type="submit" class="btn btn-light">Submit</button>

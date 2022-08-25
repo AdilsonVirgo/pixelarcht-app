@@ -38,7 +38,8 @@ Route::controller(WordController::class)->group(function () {
     Route::get('/words', 'index');   
     Route::get('/words/create', 'create');
     Route::post('/words', 'store');
-    Route::get('/words/search', 'search');   
+    Route::get('/words/search', 'search');  
+    Route::post('/words/search', 'postsearch');
 }); 
 
 
